@@ -34,17 +34,15 @@ class NewVisitorTest(LiveServerTestCase):
 
         about_link = self.browser.find_element_by_link_text('About')
         self.assertIn('About', about_link.text)
-
         # about_link.click()
-        # print(self.live_server_url + '/results/')
-        # self.browser.get(self.live_server_url + '/results/')
-        # self.assertIn('Results', self.browser.title)
-
-
-        self.browser.implicitly_wait(5)
 
         # she clicks on results and gets taken onto a new page
+        about_link.click()
+        # self.assertIn('Results', self.browser.title)
         # the results page also has these three links
+        results_url = self.browser.current_url
+        self.assertRegex(results_url, '/results/.+')
+
         # so she now clicks on the about
         # she gets taken to a new page
         # this new page also has the three links

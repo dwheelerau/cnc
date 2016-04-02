@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import resolve
-from concordianbc.views import home_page
+from concordianbc.views import home_page, results_page
 from django.http import HttpRequest
 # from django.template.loader import render_to_string
 
@@ -30,3 +30,15 @@ class HomePageTest(TestCase):
         self.assertIn('<a href="">Home</a>', response.content.decode())
         self.assertIn('<a href="">Results</a>', response.content.decode())
         self.assertIn('<a href="">About</a>', response.content.decode())
+
+    def test_results_page_exists(self):
+        request = HttpRequest()
+        response = results_page(request)
+
+        self.assertIn('<title>Results</title>', response.content.decode())
+
+        # self.assertEqual(response.status_code, 302)
+        # print(dir(response.content))
+        results = resolve('/results/')
+        print(results.func)
+        self.assertEqual(results.func, '/results/')
