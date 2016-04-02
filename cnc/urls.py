@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', concordianbc_views.home_page, name='home'),
     url(r'^results/', concordianbc_views.results_page, name='results'),
+    url(r'^about/', concordianbc_views.about_page, name='about'),
     # url(r'^concordianbc/', include(concordianbc_urls)),
     # url(r'^$', include(concordianbc_urls)),
 ]

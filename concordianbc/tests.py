@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import resolve
-from concordianbc.views import home_page, results_page
+from concordianbc.views import home_page, results_page, about_page
 from django.http import HttpRequest
 # from django.template.loader import render_to_string
 
@@ -41,3 +41,14 @@ class HomePageTest(TestCase):
         # print(dir(response.content))
         results = resolve('/results/')
         self.assertEqual(results.func, results_page)
+
+    def test_about_page_exists(self):
+        request = HttpRequest()
+        response = about_page(request)
+
+        self.assertIn('<title>About</title>', response.content.decode())
+
+        # self.assertEqual(response.status_code, 302)
+        # print(dir(response.content))
+        about = resolve('/about/')
+        self.assertEqual(about.func, about_page)

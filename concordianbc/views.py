@@ -8,3 +8,7 @@ def home_page(request):
 
 def results_page(request):
     return render(request, 'results.html')
+
+
+def about_page(request):
+    return render(request, 'about.html')
