@@ -17,5 +17,6 @@ from django.conf.urls import url
 from concordianbc import views
 
 urlpatterns = [
-    url(r'^results/$', views.results_page, name='results'),
+    # url(r'^$', views.home_page, name='home'),
+    # url(r'^results/$', views.results_page, name='results'),
 ]

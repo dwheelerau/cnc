@@ -40,5 +40,4 @@ class HomePageTest(TestCase):
         # self.assertEqual(response.status_code, 302)
         # print(dir(response.content))
         results = resolve('/results/')
-        print(results.func)
-        self.assertEqual(results.func, '/results/')
+        self.assertEqual(results.func, results_page)
