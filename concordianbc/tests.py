@@ -15,7 +15,6 @@ class HomePageTest(TestCase):
     def test_home_page_returns_correct_url(self):
         request = HttpRequest()
         response = home_page(request)
-        self.assertTrue(response.content.startswith(b'<html>'))
         self.assertIn(
             '<title>Welcome to Concordia netball!</title>',
             response.content.decode())
