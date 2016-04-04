@@ -7,28 +7,6 @@ body{
     margin-right: auto;
 }
 
-ul.nav li {
-    display: inline;
-}
-
-ul.nav a {
-    display: inline;
-    border: 1px dashed #000;
-    border-bottom: none;
-    padding: 5px 15px 5px 15px;
-    margin-right: 5px;
-    text-decoration: none;
-}
-
-ul.nav {
-    margin-left: 0;
-    list-style: none;
-    padding-left: 0;
-    padding-top: 6px;
-    padding-bottom: 5px;
-    border-bottom: 1px dashed #000;
-}
-
 hr { 
     display: block;
     margin-top: 0.5em;
