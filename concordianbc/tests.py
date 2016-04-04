@@ -26,9 +26,9 @@ class HomePageTest(TestCase):
         request = HttpRequest()
         response = home_page(request)
         # home_page_string = render_to_string('home.html')
-        self.assertIn('<a href="">Home</a>', response.content.decode())
-        self.assertIn('<a href="">Results</a>', response.content.decode())
-        self.assertIn('<a href="">About</a>', response.content.decode())
+        self.assertIn('>Home</a>', response.content.decode())
+        self.assertIn('>Results</a>', response.content.decode())
+        self.assertIn('>About</a>', response.content.decode())
 
     def test_results_page_exists(self):
         request = HttpRequest()
@@ -51,3 +51,16 @@ class HomePageTest(TestCase):
         # print(dir(response.content))
         about = resolve('/about/')
         self.assertEqual(about.func, about_page)
+
+    def test_nav_links_work(self):
+        request = HttpRequest()
+        response_home = home_page(request)
+        response_about = about_page(request)
+        response_results = results_page(request)
+
+        self.assertRegex(
+            response_home.content.decode(), '.+<a href="/".+')
+        self.assertRegex(
+            response_results.content.decode(), '.+<a href=.+results/.+')
+        self.assertRegex(
+            response_about.content.decode(), '.+<a href=.+about/.+')

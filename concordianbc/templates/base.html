@@ -8,9 +8,19 @@
         <title>{% block title_text %}{% endblock %}</title>
         <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="/static/base.css" rel="stylesheet">
-    </head>
+        {% load staticfiles %}
+        <img src="{% static "images/logo.png" %}" height-"200" width="200"/>
 
-    <a href="">Home</a>
-    <a href="">Results</a>
-    <a href="">About</a>
+    </head>
+    <div>
+   <nav>
+        <li><a href="/">Home</a></li>
+        <li><a href="/results/">Results</a></li>
+        <li><a href="/about/">About</a></ul>
+    </nav>
+    <hr>
+    </div>
+    <body>
+            {% block body_text %}{% endblock %}
+    </body>
 </html>

@@ -29,21 +29,30 @@ class NewVisitorTest(LiveServerTestCase):
         home_link = self.browser.find_element_by_link_text('Home')
         self.assertIn('Home', home_link.text)
 
+        # she clicks on results and gets taken to the results page
         results_link = self.browser.find_element_by_link_text('Results')
         self.assertIn('Results', results_link.text)
+        results_link.click()
+        self.browser.implicitly_wait(3)
+        results_url = self.browser.current_url
+        self.assertRegex(results_url, '.+/results/')
 
+        # she clicks on about and gets taken to the about page
         about_link = self.browser.find_element_by_link_text('About')
         self.assertIn('About', about_link.text)
-        # about_link.click()
-
-        # she clicks on results and gets taken onto a new page
         about_link.click()
-        # self.assertIn('Results', self.browser.title)
-        # the results page also has these three links
-        results_url = self.browser.current_url
-        self.assertRegex(results_url, '/results/.+')
+        self.browser.implicitly_wait(3)
+        about_url = self.browser.current_url
+        self.assertRegex(about_url, '.+/about/')
 
-        # so she now clicks on the about
-        # she gets taken to a new page
+        home_link = self.browser.find_element_by_link_text('Home')
+        self.assertIn('Home', home_link.text)
+
+        # content, she then clicks back on the home page link
+        home_link.click()
+        self.browser.implicitly_wait(3)
+        home_url = self.browser.current_url
+        self.assertRegex(home_url, '.+/')
+
         # this new page also has the three links
         self.fail('Finish the tests')
