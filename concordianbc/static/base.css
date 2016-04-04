@@ -3,22 +3,26 @@ body{
     font-size: 170%;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #E5E4E2;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+ul.nav li {
+    display: inline;
 }
 
-li {
+ul.nav a {
     display: inline;
-    background-color: #E5E4E2;
-    font-size: 170%;
-    padding: 5px;
+    border: 1px dashed #000;
+    border-bottom: none;
+    padding: 5px 15px 5px 15px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+ul.nav {
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #000;
 }
 
 hr { 
