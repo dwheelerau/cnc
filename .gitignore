@@ -1,4 +1,5 @@
 db.sqlite3
 __pycache__
 *.pyc
-concordianbc/static/**
+concordianbc/static/images/*
+concordianbc/static/bootstrap/**
