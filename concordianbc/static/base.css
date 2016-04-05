@@ -1,18 +1,27 @@
-body{
-    background-color: #E5E4E2;
-    font-size: 170%;
-    width: auto;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+.container {
+    padding: 80px 120px;
 }
 
-hr { 
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+}
+
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+    display: none; /* Hide carousel text if screen <600 pix */ 
+    }
 }
